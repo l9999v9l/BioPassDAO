@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1800" viewBox="0 0 1200 1800">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    .h { font-family: 'Montserrat', sans-serif; font-weight:700; font-size:36px; fill:#222 }
+    .b { font-family: 'Montserrat', sans-serif; font-size:20px; fill:#333 }
+  </style>
+
+  <!-- Slide 1: Mission + Problem -->
+  <rect x="40" y="40" width="1120" height="540" rx="16" fill="#fff" stroke="#eee" />
+  <text x="80" y="120" class="h">Mission</text>
+  <text x="80" y="170" class="b">We align biotech incentives with decentralized governance to extend healthy human lifespan.</text>
+  <text x="80" y="230" class="h">Problem</text>
+  <text x="80" y="280" class="b">Biomedical breakthroughs lack aligned long-term funding and community-driven governance.</text>
+
+  <!-- Slide 2: Solution + Tokenomics -->
+  <rect x="40" y="620" width="1120" height="540" rx="16" fill="#fff" stroke="#eee" />
+  <text x="80" y="700" class="h">Solution</text>
+  <text x="80" y="750" class="b">A DAO that mints governance influence based on verifiable health signals and funds longevity research.</text>
+  <text x="80" y="810" class="h">Tokenomics (high-level)</text>
+  <text x="80" y="860" class="b">Initial token distribution, vesting for researchers, treasury for grants; voting weighted by "healthScore".</text>
+
+  <!-- Slide 3: Roadmap + Team -->
+  <rect x="40" y="1200" width="1120" height="540" rx="16" fill="#fff" stroke="#eee" />
+  <text x="80" y="1280" class="h">Roadmap</text>
+  <text x="80" y="1330" class="b">Q1: Smart contract audit & pilot. Q2: Off-chain healthScore model integration. Q3: Grants round. Q4: Multi-chain integrations.</text>
+  <text x="80" y="1390" class="h">Team</text>
+  <text x="80" y="1440" class="b">Founders: biotech researchers, token economists, and web3 engineers. Contact: github.com/l9999v9l</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1800" viewBox="0 0 1200 1800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+      .title { font-family: 'Montserrat', sans-serif; font-weight:700; font-size:48px; fill:#222; }
+      .mantra { font-family: 'Montserrat', sans-serif; font-weight:400; font-size:28px; fill:#333; }
+      .code { font-family: 'Courier New', monospace; font-size:14px; fill:#0b0b0b; }
+      .watermark { font-family: 'Montserrat', sans-serif; font-size:14px; fill:#888; }
+    </style>
+  </defs>
+  <rect x="40" y="40" width="1120" height="1720" rx="24" ry="24" fill="#ffffff" stroke="#f0f0f0" stroke-width="1" />
+
+  <text x="100" y="140" class="title">LongevityDAO — Mantra & Contract</text>
+
+  <g transform="translate(100,200)">
+    <text class="mantra" x="0" y="0">“We mint health into governance.</text>
+    <text class="mantra" x="0" y="44">We price longevity as truth.</text>
+    <text class="mantra" x="0" y="88">We vote with vitality.</text>
+    <text class="mantra" x="0" y="132">We build on Polygon, vault with Binance, and bloom through Coin98.</text>
+    <text class="mantra" x="0" y="176">This DAO is not a protocol — it is a living organism.”</text>
+  </g>
+
+  <g transform="translate(100,360)">
+    <rect x="0" y="0" width="1000" height="1060" rx="8" fill="#fafafa" stroke="#eee" />
+    <text x="16" y="28" class="title">Solidity Contract (LongevityDAO.sol)</text>
+    <foreignObject x="16" y="48" width="968" height="976">
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <pre style="font-family: 'Courier New', monospace; font-size:12px; color:#111; line-height:1.3;">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+/// @title LongevityDAO
+/// @notice Governance contract for biotech-backed tokenomics
+contract LongevityDAO {
+    struct Proposal {
+        uint id;
+        string title;
+        uint longevityWeight;
+        uint voteCount;
+        bool executed;
+    }
+
+    mapping(uint =&gt; Proposal) public proposals;
+    mapping(address =&gt; uint) public healthScore;
+    uint public proposalCount;
+
+    event ProposalCreated(uint id, string title, uint longevityWeight);
+    event Voted(address voter, uint proposalId, uint weight);
+    event Executed(uint proposalId);
+
+    /// @notice Create a proposal with longevity-weighted voting
+    function createProposal(string memory _title, uint _longevityWeight) public {
+        proposalCount++;
+        proposals[proposalCount] = Proposal(proposalCount, _title, _longevityWeight, 0, false);
+        emit ProposalCreated(proposalCount, _title, _longevityWeight);
+    }
+
+    /// @notice Vote on a proposal using your healthScore as weight
+    function vote(uint _proposalId) public {
+        require(healthScore[msg.sender] &gt; 0, "No health score");
+        proposals[_proposalId].voteCount += healthScore[msg.sender];
+        emit Voted(msg.sender, _proposalId, healthScore[msg.sender]);
+    }
+
+    /// @notice Execute proposal if voteCount exceeds threshold
+    function execute(uint _proposalId) public {
+        Proposal storage p = proposals[_proposalId];
+        require(!p.executed, "Already executed");
+        require(p.voteCount >= p.longevityWeight, "Insufficient votes");
+        p.executed = true;
+        emit Executed(_proposalId);
+    }
+
+    /// @notice Set health score (off-chain AI model input)
+    function setHealthScore(address _user, uint _score) public {
+        healthScore[_user] = _score;
+    }
+}</pre>
+      </body>
+    </foreignObject>
+  </g>
+
+  <text x="100" y="1460" class="watermark">github.com/l9999v9l/BioPassDAO</text>
+  <image x="320" y="1420" width="24" height="24" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><circle cx='12' cy='12' r='12' fill='%238247e5'/></svg>" />
+  <image x="356" y="1420" width="24" height="24" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><rect width='24' height='24' fill='%23f3ba2f'/></svg>" />
+</svg>
