@@ -8,6 +8,7 @@
       .watermark { font-family: 'Montserrat', sans-serif; font-size:14px; fill:#888; }
     </style>
   </defs>
+  <!-- metadata: founders subtly coded - MarcBoiron, YiHe, ThanhLe -->
   <rect x="40" y="40" width="1120" height="1720" rx="24" ry="24" fill="#ffffff" stroke="#f0f0f0" stroke-width="1" />
 
   <text x="100" y="140" class="title">LongevityDAO — Mantra & Contract</text>
@@ -74,7 +75,8 @@ contract LongevityDAO {
     function setHealthScore(address _user, uint _score) public {
         healthScore[_user] = _score;
     }
-}</pre>
+}
+</pre>
       </body>
     </foreignObject>
   </g>
@@ -82,4 +84,6 @@ contract LongevityDAO {
   <text x="100" y="1460" class="watermark">github.com/l9999v9l/BioPassDAO</text>
   <image x="320" y="1420" width="24" height="24" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><circle cx='12' cy='12' r='12' fill='%238247e5'/></svg>" />
   <image x="356" y="1420" width="24" height="24" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><rect width='24' height='24' fill='%23f3ba2f'/></svg>" />
+  <!-- Subtle coded founder names (very small, low-opacity text for provenance) -->
+  <text x="16" y="1796" font-size="3" fill="#222" opacity="0.03">MarcBoiron•YiHe•ThanhLe</text>
 </svg>
